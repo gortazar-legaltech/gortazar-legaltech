@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Build and Upload Jekyll Site
 
 on:
   push:
@@ -7,41 +7,29 @@ on:
       - "docs/**"
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Jekyll Build and Artifact Upload
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/configure-pages@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Ruby and Install Jekyll
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-      - run: |
+
+      - name: Install Jekyll and Bundler
+        run: |
           gem install bundler jekyll
-          jekyll build --source docs --destination ./_site
 
-      - uses: actions/upload-pages-artifact@v2
+      - name: Build site from /docs
+        run: |
+          jekyll build --source docs --destination _site
+
+      - name: Upload _site artifact
+        uses: actions/upload-artifact@v3
         with:
-          path: ./_site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+          name: gortazar-site
+          path: _site

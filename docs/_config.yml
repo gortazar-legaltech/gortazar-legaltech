@@ -11,58 +11,29 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-# theme: jekyll-agency
+theme: jekyll-agency
 
-title: GORTAZAR Legal Advisors
-description: Navegando la Justicia con Sabiduría Ancestral
-baseurl: "/gortazar-legaltech"
-url: "https://gortazar-legaltech.github.io"
+url    : "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
 
-# SEO básico
-permalink: pretty
+title      : Your Awesome Website
+email      : your-email@example.com #this is also the email contact forms will go to
+description: "Site description"
+author     : Your Name
+# logo:     #optional, defaults to site title
+  # path: assets\img\clients\creative-market.jpg
+  # height: 60 #height in px, defaults to 52px
+
+locale: "en-US" # See available languages in _data/sitetext.yml
+
+analytics:
+  google: #Google Analytics tracking code here
+
+collections:
+  portfolio:
+
 markdown: kramdown
-
-# ⚠️ IMPORTANTE: no usar temas remotos
-# Desactivamos el uso de tema remoto
-theme: null
-
-# Forzamos rutas locales
-# Rutas personalizadas de tema local
-layouts_dir: _layouts
-includes_dir: _includes
-sass:
-  sass_dir: assets/css
-  style: compressed
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-github-metadata
-  - jekyll-relative-links
-  
-# Multiidioma - configuración por defecto
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-      lang: es
-
 
 # Uncomment following line to use Formspree form ID based URL instead of email based URL
 # Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
-formspree_form_path: "f/mgvanydd" # formspree_form_path: "f/a_form_id"
-# Formspree integration
-
-
-#analytics:
-#  google: #Google Analytics tracking code here
-
-#collections:
-#  portfolio:
-
-
-######
-
+# formspree_form_path: "f/a_form_id"

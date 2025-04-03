@@ -1,39 +1,32 @@
+
 es:
-  - title: "Inicio"
-    url: "/es/"
-  - title: "Quiénes Somos"
-    url: "/es/about/"
-  - title: "Privacidad"
-    url: "/es/privacidad/"
-  - title: "Contacto"
-    url: "/es/contacto/"
-
-pt:
-  - title: "Início"
-    url: "/pt/"
-  - title: "Quem Somos"
-    url: "/pt/about/"
-  - title: "Privacidade"
-    url: "/pt/privacidad/"
-  - title: "Contato"
-    url: "/pt/contacto/"
-
-it:
-  - title: "Home"
-    url: "/it/"
-  - title: "Chi Siamo"
-    url: "/it/about/"
-  - title: "Privacy"
-    url: "/it/privacidad/"
-  - title: "Contatto"
-    url: "/it/contacto/"
+  - title: Inicio
+    url: /es/
+  - title: Sobre Nosotros
+    url: /es/about/
+  - title: Contacto
+    url: /es/contacto/
 
 en:
-  - title: "Home"
-    url: "/en/"
-  - title: "About"
-    url: "/en/about/"
-  - title: "Privacy"
-    url: "/en/privacidad/"
-  - title: "Contact"
-    url: "/en/contacto/"
+  - title: Home
+    url: /en/
+  - title: About Us
+    url: /en/about/
+  - title: Contact
+    url: /en/contact/
+
+pt:
+  - title: Início
+    url: /pt/
+  - title: Sobre Nós
+    url: /pt/about/
+  - title: Contato
+    url: /pt/contact/
+
+it:
+  - title: Inizio
+    url: /it/
+  - title: Chi Siamo
+    url: /it/about/
+  - title: Contatto
+    url: /it/contact/

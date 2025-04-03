@@ -1,57 +1,27 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'es' }}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | GORTAZAR Legal Advisors</title>
-<meta property="og:title" content="{{ page.title }} | GORTAZAR Legal Advisors" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="{{ '/assets/images/logo_gortazar.png' | relative_url }}" />
-  <meta property="og:url" content="{{ page.url | absolute_url }}" />
-  <meta name="description" content="GORTAZAR Legal Advisors - Bufete jurídico especializado con visión moderna y ética profesional." />
-  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-  <link rel="icon" href="{{ '/assets/images/logo_firma_emails.png' | relative_url }}">
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-wrapper">
-      <img src="{{ '/assets/images/logo_gortazar.png' | relative_url }}" alt="Gortazar Legal Advisors" class="logo-main">
-      <nav class="site-nav">
-        {% assign nav = site.data.navigation[page.lang] %}
-        <ul>
-          {% for item in nav %}
-          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
-          {% endfor %}
-          <li class="lang-switch">
-            🌐
-            <select onchange="location = this.value;">
-              {% for lang in site.languages %}
-              <option value="{{ '/' | append: lang | append: '/' | relative_url }}" {% if page.lang == lang %}selected{% endif %}>
-                {{ lang | upcase }}
-              </option>
-              {% endfor %}
-            </select>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header-banner">
-      <img src="{{ '/assets/images/membrete_landing.png' | relative_url }}" alt="Membrete Visual">
-    </div>
-  </header>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 
-  <main class="site-content">
-    {{ content }}
-  </main>
+  {% include head.html %}
 
-  <footer class="site-footer">
-    <div class="footer-banner">
-      <img src="{{ '/assets/images/footer_visual_banner.png' | relative_url }}" alt="Pie visual">
-    </div>
-    <div class="footer-info">
-      <img src="{{ '/assets/images/firma_email_detallada.png' | relative_url }}" alt="Firma Legal" class="firma-footer">
-      <p>&copy; {{ 'now' | date: "%Y" }} GORTAZAR Legal Advisors. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-</body>
+  <body id="page-top">
+
+      {{ content }}
+
+	  {% include footer.html %}
+
+	  <!-- Bootstrap core JavaScript -->
+	  <script src="assets/js/jquery.min.js"></script>
+	  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	  <!-- Plugin JavaScript -->
+	  <script src="assets/js/jquery.easing.min.js"></script>
+
+	  <!-- Contact form JavaScript -->
+	  <script src="assets/js/jqBootstrapValidation.js"></script>
+	  <script src="assets/js/contact_me.js"></script>
+
+	  <!-- Custom scripts for this template -->
+	  <script src="assets/js/agency.min.js"></script>
+
+  </body>
 </html>

@@ -27,15 +27,16 @@ jobs:
           cd docs
           bundle install
 
-      - name: Build Jekyll site
+      - name: Install Jekyll and Bundler
         run: |
-          cd docs
-          bundle exec jekyll build -d ../_site
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+          gem install bundler jekyll
+  
+      - name: Build site from /docs
+        run: |
+          jekyll build --source docs --destination _site
+  
+      - name: Upload _site artifact
+        uses: actions/upload-artifact@v3
         with:
+          name: gortazar-site
           path: _site
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2

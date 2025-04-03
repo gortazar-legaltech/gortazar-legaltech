@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ page.lang | default: site.lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,9 +16,19 @@
         <img src="{{ '/assets/images/logo_gortazar.svg' | relative_url }}" alt="GORTAZAR Logo" class="logo"/>
       </a>
       <ul class="nav-menu">
-        <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
-        <li><a href="{{ '/about/' | relative_url }}">Quiénes Somos</a></li>
-        <li><a href="{{ '/privacidad/' | relative_url }}">Privacidad</a></li>
+        {% for item in site.data.navigation[page.lang] %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+        <li class="lang-switcher">
+          🌍
+          <select onchange="location = this.value;" style="background-color: #002147; color: white; border: none; padding: 4px 6px;">
+            {% for lang in site.languages %}
+              {% if lang != page.lang %}
+              <option value="{{ '/' | append: lang | append: '/' }}">{{ lang | upcase }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </li>
       </ul>
     </nav>
   </header>

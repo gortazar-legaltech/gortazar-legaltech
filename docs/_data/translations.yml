@@ -1,0 +1,20 @@
+es:
+  form:
+    email: Tu email
+    message: Tu mensaje
+    send: Enviar
+en:
+  form:
+    email: Your email
+    message: Your message
+    send: Send
+pt:
+  form:
+    email: Seu e-mail
+    message: Sua mensagem
+    send: Enviar
+it:
+  form:
+    email: La tua email
+    message: Il tuo messaggio
+    send: Invia

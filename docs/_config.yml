@@ -17,34 +17,52 @@ title: GORTAZAR Legal Advisors
 description: Navegando la Justicia con Sabiduría Ancestral
 baseurl: "/gortazar-legaltech"
 url: "https://gortazar-legaltech.github.io"
+
+# SEO básico
+permalink: pretty
 markdown: kramdown
-theme: minima
+
+# ⚠️ IMPORTANTE: no usar temas remotos
+# Desactivamos el uso de tema remoto
+theme: null
+
+# Forzamos rutas locales
+# Rutas personalizadas de tema local
+layouts_dir: _layouts
+includes_dir: _includes
+sass:
+  sass_dir: assets/css
+  style: compressed
+
 plugins:
+  - jekyll-feed
   - jekyll-seo-tag
-languages: ["es", "pt", "it", "en"]
-default_lang: "es"
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-include:
-  - .well-known
-
-email      : gortazar-legaltech@atlantyde.eu
-author     : JaSiLez
-logo:     #optional, defaults to site title
-  path: assets\imgages\logo_gortazar.svg
-  height: 60 #height in px, defaults to 52px
-
-locale: "es-ES" # See available languages in _data/sitetext.yml
-
-analytics:
-  google: #Google Analytics tracking code here
-
-collections:
-  portfolio:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-github-metadata
+  - jekyll-relative-links
+  
+# Multiidioma - configuración por defecto
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: es
 
 
 # Uncomment following line to use Formspree form ID based URL instead of email based URL
 # Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
-# formspree_form_path: "f/a_form_id"
+formspree_form_path: "f/mgvanydd" # formspree_form_path: "f/a_form_id"
+# Formspree integration
+
+
+#analytics:
+#  google: #Google Analytics tracking code here
+
+#collections:
+#  portfolio:
+
+
+######
+

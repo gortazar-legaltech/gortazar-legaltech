@@ -1,0 +1,14 @@
+<form action="https://formspree.io/{{ site.formspree_form_path }}" method="POST" class="formulario-contacto">
+  <label for="email">
+    {{ site.data.translations[page.lang].form.email }}:
+    <input type="email" name="email" id="email" required>
+  </label>
+  <label for="message">
+    {{ site.data.translations[page.lang].form.message }}:
+    <textarea name="message" id="message" rows="5" required></textarea>
+  </label>
+  <!-- Honeypot anti-spam -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <button type="submit">{{ site.data.translations[page.lang].form.send }}</button>
+</form>

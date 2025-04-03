@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | GORTAZAR Legal Advisors</title>
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+  {%- seo -%}
+  <meta name="theme-color" content="#002147"/>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-bar">
+      <a class="logo-link" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/logo_gortazar.svg' | relative_url }}" alt="GORTAZAR Logo" class="logo"/>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">Quiénes Somos</a></li>
+        <li><a href="{{ '/privacidad/' | relative_url }}">Privacidad</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 GORTAZAR Legal Advisors · Navegando la Justicia con Sabiduría Ancestral</p>
+  </footer>
+</body>
+</html>

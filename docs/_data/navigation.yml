@@ -1,39 +1,79 @@
-es:
-  - title: "Inicio"
-    url: "/es/"
-  - title: "Quiénes Somos"
-    url: "/es/about/"
-  - title: "Privacidad"
-    url: "/es/privacidad/"
-  - title: "Contacto"
-    url: "/es/contacto/"
+#
+# Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
+#
+# Configuration: Add to _config.yml
+# locale: "en-US"  [YOUR PREFERRED LOCALE]
+#
+# How to use:
+# {{ site.data.navigation[site.locale].nav.<var_name> | default: 'text' }}
 
-pt:
-  - title: "Início"
-    url: "/pt/"
-  - title: "Quem Somos"
-    url: "/pt/about/"
-  - title: "Privacidade"
-    url: "/pt/privacidad/"
-  - title: "Contato"
-    url: "/pt/contacto/"
+# English (default)
+# -----------------
+en: &DEFAULT_EN
+  nav:
+    - title: "Services"
+      section: services
+    - title: "Portfolio"
+      section: portfolio
+    - title: "About"
+      section: about
+    - title: "Timeline"
+      section: timeline
+    - title: "Team"
+      section: team
+    - title: "Contact"
+      section: contact
+    - title: "Theme Source"
+      url: https://github.com/raviriley/agency-jekyll-theme/
+en-US:
+  <<: *DEFAULT_EN
+en-CA:
+  <<: *DEFAULT_EN
+en-GB:
+  <<: *DEFAULT_EN
+en-AU:
+  <<: *DEFAULT_EN
 
-it:
-  - title: "Home"
-    url: "/it/"
-  - title: "Chi Siamo"
-    url: "/it/about/"
-  - title: "Privacy"
-    url: "/it/privacidad/"
-  - title: "Contatto"
-    url: "/it/contacto/"
+# Spanish
+# -------
+es: &DEFAULT_ES
+  nav:
+    - title: "Servicios"
+      section: servicios
+    - title: "Portafolio"
+      section: portafolio
+    - title: "Sobre Nosotros"
+      section: nosotros
+    - title: "Cronología"
+      section: cronologia
+    - title: "Equipo"
+      section: equipo
+    - title: "Contáctenos"
+      section: contacto
+    - title: "Fuente de la plantilla"
+      url: https://github.com/raviriley/agency-jekyll-theme/
+es-ES:
+  <<: *DEFAULT_ES
+es-CO:
+  <<: *DEFAULT_ES
 
-en:
-  - title: "Home"
-    url: "/en/"
-  - title: "About"
-    url: "/en/about/"
-  - title: "Privacy"
-    url: "/en/privacidad/"
-  - title: "Contact"
-    url: "/en/contacto/"
+# Deutsch
+# -----------------
+de: &DEFAULT_DE
+  nav:
+    - title: "Leistungen"
+      section: Leistungen
+    - title: "Portfolio"
+      section: Portfolio
+    - title: "Über uns"
+      section: Ueber
+    - title: "Geschichte"
+      section: Geschichte
+    - title: "Team"
+      section: Team
+    - title: "Kontakt"
+      section: Kontakt
+    - title: "Quellcode des Themas"
+      url: https://github.com/raviriley/agency-jekyll-theme/
+de-DE:
+  <<: *DEFAULT_DE

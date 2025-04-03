@@ -1,33 +1,23 @@
-# 🌐 GORTAZAR Legal Advisors - Sitio Web Multilingüe
+# GORTAZAR Legal Advisors — Sitio Oficial
 
-Este repositorio contiene el sitio web oficial multilingüe de GORTAZAR Legal Advisors, desplegado a través de GitHub Pages desde la carpeta `/docs`.
+Este repositorio contiene el sitio web multilingüe de **GORTAZAR Legal Advisors**, un bufete disruptivo de base tecnológica con proyección europea y foco en eficiencia legal, cumplimiento normativo y tecnología ética.
 
-## 📂 Estructura del Repositorio
+## Idiomas soportados
+- Español (ES)
+- Inglés (EN)
+- Portugués (PT)
+- Italiano (IT)
 
-- `/docs/`: Contiene todo el contenido del sitio (layouts, assets, contenido multilingüe, formularios legales).
-- `.github/workflows/`: Contiene el flujo CI/CD si se desea personalizar el despliegue.
-- `README.md`: Este archivo.
+## Despliegue GitHub Pages
+El contenido de producción se encuentra en la carpeta `/docs`. Configurar GitHub Pages para usar esa ruta como origen.
 
-## 🚀 Despliegue
+## Branding
+El diseño está basado en un tema profesional Jekyll adaptado a la imagen institucional de GORTAZAR:
+- Logos
+- Membretes
+- Firma digital
+- Colores corporativos
+- Tipografía sobria
 
-El sitio se publica automáticamente desde la rama `main`, carpeta `/docs`. Verifica en Settings > Pages:
-
-- Branch: `main`
-- Folder: `/docs`
-
-No se requiere rama `gh-pages`.
-
-## 🌐 Idiomas Soportados
-
-- Español (por defecto)
-- Portugués
-- Italiano
-- Inglés
-
-## 🔐 Cumplimiento y Seguridad
-
-Incluye `.well-known/security.txt`, formulario RGPD vía Formspree, y estructura multilingüe basada en accesibilidad y estándares web modernos.
-
-## 🧭 Contacto
-
-Visita https://gortazar-legaltech.github.io/gortazar-legaltech/
+## Contribuir
+Por favor, revise `CONTRIBUTING.md` y use `issues` o `pull requests` para colaborar.

@@ -1,0 +1,39 @@
+es:
+  - title: "Inicio"
+    url: "/es/"
+  - title: "Quiénes Somos"
+    url: "/es/about/"
+  - title: "Privacidad"
+    url: "/es/privacidad/"
+  - title: "Contacto"
+    url: "/es/contacto/"
+
+pt:
+  - title: "Início"
+    url: "/pt/"
+  - title: "Quem Somos"
+    url: "/pt/about/"
+  - title: "Privacidade"
+    url: "/pt/privacidad/"
+  - title: "Contato"
+    url: "/pt/contacto/"
+
+it:
+  - title: "Home"
+    url: "/it/"
+  - title: "Chi Siamo"
+    url: "/it/about/"
+  - title: "Privacy"
+    url: "/it/privacidad/"
+  - title: "Contatto"
+    url: "/it/contacto/"
+
+en:
+  - title: "Home"
+    url: "/en/"
+  - title: "About"
+    url: "/en/about/"
+  - title: "Privacy"
+    url: "/en/privacidad/"
+  - title: "Contact"
+    url: "/en/contacto/"

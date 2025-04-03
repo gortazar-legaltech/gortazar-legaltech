@@ -1,44 +1,57 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang }}">
+<html lang="{{ page.lang | default: site.lang | default: 'es' }}">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | GORTAZAR Legal Advisors</title>
+<meta property="og:title" content="{{ page.title }} | GORTAZAR Legal Advisors" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ '/assets/images/logo_gortazar.png' | relative_url }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta name="description" content="GORTAZAR Legal Advisors - Bufete jurídico especializado con visión moderna y ética profesional." />
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-  <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
-  {%- seo -%}
-  <meta name="theme-color" content="#002147"/>
+  <link rel="icon" href="{{ '/assets/images/logo_firma_emails.png' | relative_url }}">
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav-bar">
-      <a class="logo-link" href="{{ '/' | relative_url }}">
-        <img src="{{ '/assets/images/logo_gortazar.svg' | relative_url }}" alt="GORTAZAR Logo" class="logo"/>
-      </a>
-      <ul class="nav-menu">
-        {% for item in site.data.navigation[page.lang] %}
+    <div class="header-wrapper">
+      <img src="{{ '/assets/images/logo_gortazar.png' | relative_url }}" alt="Gortazar Legal Advisors" class="logo-main">
+      <nav class="site-nav">
+        {% assign nav = site.data.navigation[page.lang] %}
+        <ul>
+          {% for item in nav %}
           <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
-        {% endfor %}
-        <li class="lang-switcher">
-          🌍
-          <select onchange="location = this.value;" style="background-color: #002147; color: white; border: none; padding: 4px 6px;">
-            {% for lang in site.languages %}
-              {% if lang != page.lang %}
-              <option value="{{ '/' | append: lang | append: '/' }}">{{ lang | upcase }}</option>
-              {% endif %}
-            {% endfor %}
-          </select>
-        </li>
-      </ul>
-    </nav>
+          {% endfor %}
+          <li class="lang-switch">
+            🌐
+            <select onchange="location = this.value;">
+              {% for lang in site.languages %}
+              <option value="{{ '/' | append: lang | append: '/' | relative_url }}" {% if page.lang == lang %}selected{% endif %}>
+                {{ lang | upcase }}
+              </option>
+              {% endfor %}
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-banner">
+      <img src="{{ '/assets/images/membrete_landing.png' | relative_url }}" alt="Membrete Visual">
+    </div>
   </header>
 
-  <main class="page-content">
+  <main class="site-content">
     {{ content }}
   </main>
 
   <footer class="site-footer">
-    <p>© 2025 GORTAZAR Legal Advisors · Navegando la Justicia con Sabiduría Ancestral</p>
+    <div class="footer-banner">
+      <img src="{{ '/assets/images/footer_visual_banner.png' | relative_url }}" alt="Pie visual">
+    </div>
+    <div class="footer-info">
+      <img src="{{ '/assets/images/firma_email_detallada.png' | relative_url }}" alt="Firma Legal" class="firma-footer">
+      <p>&copy; {{ 'now' | date: "%Y" }} GORTAZAR Legal Advisors. Todos los derechos reservados.</p>
+    </div>
   </footer>
 </body>
 </html>

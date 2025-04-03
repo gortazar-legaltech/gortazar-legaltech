@@ -1,27 +1,33 @@
+# 🌐 GORTAZAR Legal Advisors - Sitio Web Multilingüe
 
-# GORTAZAR Legal Advisors - Landing Page
+Este repositorio contiene el sitio web oficial multilingüe de GORTAZAR Legal Advisors, desplegado a través de GitHub Pages desde la carpeta `/docs`.
 
-Landing page oficial de GORTAZAR Legal Advisors desplegada con GitHub Pages.
+## 📂 Estructura del Repositorio
 
-## ✨ Tecnologías
-
-- HTML5 + CSS3
-- GitHub Pages
-- GitHub Actions (CI/CD)
-- Responsive Design
-
-## 📦 Estructura
-
-- `index.html`: Página principal
-- `privacidad.html`: Página de privacidad
-- `style.css`: Estilos principales
-- `assets/`: Logos y recursos gráficos
-- `.github/workflows/deploy.yml`: CI/CD
+- `/docs/`: Contiene todo el contenido del sitio (layouts, assets, contenido multilingüe, formularios legales).
+- `.github/workflows/`: Contiene el flujo CI/CD si se desea personalizar el despliegue.
+- `README.md`: Este archivo.
 
 ## 🚀 Despliegue
 
-Esta landing se actualiza automáticamente al hacer push en la rama `main`.
+El sitio se publica automáticamente desde la rama `main`, carpeta `/docs`. Verifica en Settings > Pages:
 
-## 🔒 Legal
+- Branch: `main`
+- Folder: `/docs`
 
-Cumplimos con el RGPD. Consulta nuestra [Política de Privacidad](privacidad.html).
+No se requiere rama `gh-pages`.
+
+## 🌐 Idiomas Soportados
+
+- Español (por defecto)
+- Portugués
+- Italiano
+- Inglés
+
+## 🔐 Cumplimiento y Seguridad
+
+Incluye `.well-known/security.txt`, formulario RGPD vía Formspree, y estructura multilingüe basada en accesibilidad y estándares web modernos.
+
+## 🧭 Contacto
+
+Visita https://gortazar-legaltech.github.io/gortazar-legaltech/

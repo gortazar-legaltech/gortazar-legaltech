@@ -1,42 +1,47 @@
-name: Deploy Jekyll site to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+    paths:
+      - "docs/**"
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: actions/configure-pages@v3
 
-      - name: Setup Ruby
+      - name: Setup Ruby and Install Jekyll
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-
-      - name: Install dependencies
-        run: |
-          cd docs
-          bundle install
-
-      - name: Install Jekyll and Bundler
-        run: |
+      - run: |
           gem install bundler jekyll
-  
-      - name: Build site from /docs
-        run: |
-          jekyll build --source docs --destination _site
-  
-      - name: Upload _site artifact
-        uses: actions/upload-artifact@v3
+          jekyll build --source docs --destination ./_site
+
+      - uses: actions/upload-pages-artifact@v2
         with:
-          name: gortazar-site
-          path: _site
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3

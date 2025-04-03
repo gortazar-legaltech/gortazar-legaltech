@@ -1,0 +1,25 @@
+name: Post-Deploy QA Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout actual site
+        uses: actions/checkout@v3
+
+      - name: Check HTML validity (index)
+        run: |
+          curl -s https://gortazar-legaltech.github.io/gortazar-legaltech/es/ | tidy -e || true
+
+      - name: Check for image loading
+        run: |
+          for image in logo_gortazar.png footer_visual_banner.png membrete_landing.png; do
+            curl -sSf https://gortazar-legaltech.github.io/gortazar-legaltech/assets/images/$image || echo "$image NOT FOUND"
+          done
+
+      - name: Confirm contact form is present
+        run: |
+          curl -s https://gortazar-legaltech.github.io/gortazar-legaltech/es/contacto/ | grep -q "<form" && echo "✅ Formulario detectado" || echo "❌ Formulario no encontrado"

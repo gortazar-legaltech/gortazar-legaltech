@@ -1,9 +1,7 @@
 ---
-layout: default
-title: Benvenuto in GORTAZAR Legal Advisors
+layout: home
+title: Bienvenido (it)
 lang: it
 ---
 
-# Benvenuto in GORTAZAR Legal Advisors
-
-_Navigando nella Giustizia con Saggezza Ancestrale._
+# Página principal en it

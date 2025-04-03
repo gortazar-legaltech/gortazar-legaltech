@@ -1,0 +1,21 @@
+title: GORTAZAR Legal Advisors
+description: Navegando la Justicia con Sabiduría Ancestral
+theme: just-the-docs
+url: ""
+baseurl: ""
+lang: es
+languages: ["es", "pt", "it", "en"]
+default_lang: es
+
+plugins:
+  - jekyll-multiple-languages-plugin
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .github
+
+permalink: pretty
